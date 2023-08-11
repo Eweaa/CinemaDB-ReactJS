@@ -1,0 +1,36 @@
+.TableContainer{
+    width: 80%;
+    margin-inline: auto;
+    .TableContainerHeader{
+        display: flex;
+        justify-content: space-between;
+        input{
+            border-radius: 20px;
+            border: 1px solid grey;
+        }
+        button{
+            border: none;
+            border-radius: 5px;
+        }
+    }
+    table{
+        margin-inline: auto;
+        width: 100%;
+    }
+    tr{
+        border-bottom: 1px dashed grey;
+    }
+    .Modal{
+        width: 40%;
+        position: absolute;
+        left: 30%;
+        background: white;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 5px 5px 5px grey, -5px -5px 5px grey, -5px 0px 5px grey, 5px 0px 5px grey;
+        z-index: 3;
+        button{
+            border: none;
+        }
+    }
+}

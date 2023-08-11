@@ -1,0 +1,8 @@
+.DashboardStatCard {
+  display: inline-block;
+  border-radius: 10px;
+  border: 2px solid grey;
+  width: 250px;
+  text-align: center;
+  background: white;
+}/*# sourceMappingURL=DashboardStatCard.module.css.map */

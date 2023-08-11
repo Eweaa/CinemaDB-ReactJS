@@ -1,0 +1,9 @@
+.Nav {
+  display: flex;
+  justify-content: space-between;
+}
+.Nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}/*# sourceMappingURL=Navbar.module.css.map */

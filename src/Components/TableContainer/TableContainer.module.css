@@ -1,0 +1,36 @@
+.TableContainer {
+  width: 80%;
+  margin-inline: auto;
+}
+.TableContainer .TableContainerHeader {
+  display: flex;
+  justify-content: space-between;
+}
+.TableContainer .TableContainerHeader input {
+  border-radius: 20px;
+  border: 1px solid grey;
+}
+.TableContainer .TableContainerHeader button {
+  border: none;
+  border-radius: 5px;
+}
+.TableContainer table {
+  margin-inline: auto;
+  width: 100%;
+}
+.TableContainer tr {
+  border-bottom: 1px dashed grey;
+}
+.TableContainer .Modal {
+  width: 40%;
+  position: absolute;
+  left: 30%;
+  background: white;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px grey, -5px -5px 5px grey, -5px 0px 5px grey, 5px 0px 5px grey;
+  z-index: 3;
+}
+.TableContainer .Modal button {
+  border: none;
+}/*# sourceMappingURL=TableContainer.module.css.map */

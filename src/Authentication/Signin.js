@@ -1,6 +1,8 @@
 import axios from 'axios';
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router';
+import LoginCSS from './Singin.module.css'
+import { Link } from 'react-router-dom';
 
 
 const Signin = () => {
@@ -23,14 +25,18 @@ const Signin = () => {
 
     
     return (
-    <div>
-        <div>
-            <label>Email</label>
-            <input type='email' ref={EmailRef}/>
-            <label>Password</label>
-            <input type='password' ref={PasswordRef}/>
-            <button onClick={Signin}>Sign in</button>
-        </div>
+    <div className={LoginCSS.login}>
+        <form>
+            <h1 className='mb-4'>Cinema DB</h1>
+            <div className='mb-4'>
+                <input type='text' placeholder='Email' ref={EmailRef}/>
+            </div>
+            <div className='mb-4'>
+                <input type='password' placeholder='Password' ref={PasswordRef}/>
+            </div>
+            <button onClick={Signin} type='button'>Sign in</button>
+            <Link>Don't Have an Account? Sign Up</Link>
+        </form>
     </div>
   )
 }

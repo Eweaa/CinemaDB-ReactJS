@@ -1,0 +1,45 @@
+.login{
+    background: url('../Assets/Login.jpg');
+    height: 100vh;
+    background-size: cover;
+    form{
+        text-align: center;
+        color: white;
+        // margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        top: 30%;
+        left: 30%;
+        div{
+            width: 100%;
+        }
+        input{
+            border: none;
+            border-bottom: 1px solid grey;
+            background: transparent;
+            width: 100%;
+            color: white;
+            transition: all 0.2s ease-in-out;
+            &:focus{
+                border-bottom: 1px solid white;
+                outline: none;
+                &::placeholder{
+                    font-weight: bold;
+                }
+            }
+            &::placeholder{
+                color: white;
+            }
+        }
+        button{
+            // display: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+    }
+}

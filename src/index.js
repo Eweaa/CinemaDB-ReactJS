@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,8 +12,7 @@ import Directors from './Pages/Directors/Directors';
 import UserLayout from './Layout/User/UserLayout';
 import Signin from './Authentication/Signin';
 import { ProtectedRoute } from './Authentication/ProtectedRoute';
-
-const result = JSON.parse(localStorage.getItem('role'));
+import Home from './Pages/Home/Home';
 
 const adminRouter = createBrowserRouter([
   {
@@ -51,7 +50,13 @@ const adminRouter = createBrowserRouter([
 const userRouter = createBrowserRouter([
   {
     path:'/',
-    element: <ProtectedRoute><UserLayout /></ProtectedRoute>
+    element: <ProtectedRoute><UserLayout /></ProtectedRoute>,
+    children:[
+      {
+        path:'/',
+        element:<Home />
+      }
+    ]
   },
   {
     path: "/login",

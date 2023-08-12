@@ -1,0 +1,47 @@
+.login {
+  background: url("../Assets/Login.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+.login form {
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+.login form div {
+  width: 100%;
+}
+.login form input {
+  border: none;
+  border-bottom: 1px solid grey;
+  background: transparent;
+  width: 100%;
+  color: white;
+  transition: all 0.2s ease-in-out;
+}
+.login form input:focus {
+  border-bottom: 1px solid white;
+  outline: none;
+}
+.login form input:focus::-moz-placeholder {
+  font-weight: bold;
+}
+.login form input:focus::placeholder {
+  font-weight: bold;
+}
+.login form input::-moz-placeholder {
+  color: white;
+}
+.login form input::placeholder {
+  color: white;
+}
+.login form a {
+  text-decoration: none;
+  color: white;
+}/*# sourceMappingURL=Singin.module.css.map */

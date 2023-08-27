@@ -16,7 +16,7 @@ const Navbar = () => {
 
   return (
     <div className={[NavbarCSS.Nav, 'p-2'].join(' ')}>
-        <Link to='/'>Cinema DB</Link>
+        <Link to='/dashboard'>Cinema DB</Link>
         <button onClick={LogOut}>Log Out</button>
         <div>
             <Link to='/actors' className='mx-2'>Actors</Link>

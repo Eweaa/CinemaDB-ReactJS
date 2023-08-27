@@ -27,7 +27,9 @@ const Dashboard = () => {
 
     }
 
-    useEffect(() => getData(), [])
+    useEffect(() => {   
+        getData()
+    }, [])
 
   return (
     <div>
@@ -37,7 +39,6 @@ const Dashboard = () => {
             <h1>Database Summary</h1>
 
             <div className={[DashboardCSS.stats, 'p-4'].join(' ')}>
-
                 <DashboardStatCard title='No. of Actors' length={actor.length} color='2px solid blue'/>
                 <DashboardStatCard title='No. of Movies' length={movie.length} color='2px solid green'/>
                 <DashboardStatCard title='No. of Directors' length={director.length} color='2px solid red'/>

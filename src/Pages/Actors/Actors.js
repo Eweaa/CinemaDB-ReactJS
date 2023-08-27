@@ -31,7 +31,7 @@ const Actors = () => {
     // }))
     // console.log('this is the post data: ', postData)
     const actor = {name: data}
-    axios.post('https://localhost:7250/api/Actor', actor)
+    axios.post('https://localhost:7250/api/Actor', actor, {headers:{Authorization:`Bearer ${token}`}})
   }
 
  

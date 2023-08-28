@@ -1,0 +1,13 @@
+.HomeCard {
+  display: inline-block;
+  border: 1px solid black;
+  min-width: 400px;
+  padding: 0 !important;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.HomeCard img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=HomeCard.module.css.map */

@@ -3,6 +3,7 @@ import HomeCSS from './Home.module.css';
 import img1 from '../../Assets/Home1.jpg';
 import img2 from '../../Assets/Home2.jpg';
 import img3 from '../../Assets/Home3.jpg';
+import HomeCard from '../../Components/HomeCard/HomeCard';
 
 const Home = () => {
 
@@ -43,7 +44,22 @@ const Home = () => {
             <img src={img}/>
             <div className={HomeCSS.imgShadow}></div>
         </div>
-        <h3>What to Watch</h3>
+        <div className='p-4'>
+            <h3>What to Watch</h3>
+            <div className={HomeCSS.OFD}>
+                
+                <HomeCard img='https://c4.wallpaperflare.com/wallpaper/633/787/757/django-unchained-jamie-foxx-christoph-waltz-movies-wallpaper-preview.jpg'
+                name='Django Unchained' />
+                <HomeCard img ='https://c4.wallpaperflare.com/wallpaper/677/155/633/biography-crime-drama-goodfellas-wallpaper-preview.jpg'
+                name='Goodfellas'/>
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+                <HomeCard />
+            </div>
+        </div>
         <h3>Top 10 on Cinema DB This Week</h3>
         <h3>Top News</h3>
     </div>

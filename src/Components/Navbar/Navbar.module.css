@@ -6,4 +6,9 @@
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+.Nav button {
+  background: transparent;
+  border: none;
+  font-weight: bold;
 }/*# sourceMappingURL=Navbar.module.css.map */

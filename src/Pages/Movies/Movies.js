@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../../api/axios';
 import React, { useEffect, useState } from 'react';
 import TableContainer from '../../Components/TableContainer/TableContainer';
 import { Backdrop } from '../../Components/Backdrop/Backdrop';
@@ -12,17 +12,25 @@ const Movies = () => {
     const [modal, setModal] = useState(false);
     
     const getMovies = () => {
-        axios.get('https://localhost:7250/api/Movie', {headers:{Authorization:`Bearer ${token}`}}).then(res => {setMovies(res.data); console.log(res.data)})
+        axios.get('/api/Movie', {headers:{Authorization:`Bearer ${token}`}}).then(res => {setMovies(res.data)})
+    }
+
+    function DeleteMovie (ID){
+      return function(){
+        axios.delete('/api/Movie/' + ID, {headers:{Authorization:`Bearer ${token}`}}).then(() => {
+          // setDeleteModal(true)
+        })
+      }
     }
 
     useEffect(() => getMovies(), [])
 
   return (
-    <div>
+    <div className='p-4'>
       <Backdrop modal={modal} setModal={setModal}/>
         <h1>Movies</h1>
         <div>
-          <TableContainer data={movies} modal={modal} setModal={setModal} col='two'/>
+          <TableContainer data={movies} modal={modal} setModal={setModal} col='two' delete={DeleteMovie}/>
         </div>
     </div>
   )

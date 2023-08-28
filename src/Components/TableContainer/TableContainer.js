@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Table from '../Table/Table';
 import TableContainerCSS from './TableContainer.module.css'
 
 const TableContainer = (props) => {
+
+    const name = useRef();
+
 
     const TableCol = {
         one:<table>
@@ -13,7 +16,7 @@ const TableContainer = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.data.map((d, index) => <Table key={index} title={d.name} col='one'/>)}
+                    {props.data.map((d, index) => <Table key={d.id} id={d.id} title={d.name} col='one' delete={props.delete} />)}
                 </tbody>
             </table>,
         two:<table>
@@ -25,7 +28,7 @@ const TableContainer = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.data.map((d, index) => <Table key={index} title={d.name} director={d.directorName} col='two'/>)}
+                    {props.data.map((d, index) => <Table key={index} id={d.id} title={d.name} director={d.directorName} col='two' delete={props.delete}/>)}
                 </tbody>
             </table>
     }
@@ -41,19 +44,19 @@ const TableContainer = (props) => {
     <div className={TableContainerCSS.TableContainer}>
         <div className={[TableContainerCSS.TableContainerHeader, 'p-2'].join(' ')}>
             <input type='text' placeholder='search' className='p-1'/>
-            <button className='p-2' onClick={() => props.setModal(true)}>+</button>
+            <button className='btn btn-primary p-2' onClick={() => props.setModal(true)}>Add</button>
         </div>
         <div className='p-2'>
             {theTable}
         </div>
-        <div style={{display: props.modal ? 'block' : 'none'}} className={TableContainerCSS.Modal}>
+        <div style={{display: props.modal ? 'block' : 'none'}} className={[TableContainerCSS.Modal, 'p-4'].join(' ')}>
             <h5>Add A Movie</h5>
             <div>
                 <label>Name</label>
                 <input type='text'/>
             </div>
-            <button>Add</button>
-            <button onClick={() => props.setModal(false)}>Cancel</button>
+            <button className='mx-1 mt-2' >Add</button>
+            <button className='mx-1 mt-2' onClick={() => props.setModal(false)}>Cancel</button>
         </div>
     </div>
   )

@@ -41,7 +41,11 @@
 .login form input::placeholder {
   color: white;
 }
+.login form button {
+  border: none;
+}
 .login form a {
   text-decoration: none;
   color: white;
+  font-weight: bold;
 }/*# sourceMappingURL=Singin.module.css.map */

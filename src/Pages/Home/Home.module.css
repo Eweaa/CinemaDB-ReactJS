@@ -13,4 +13,12 @@
   background: rgba(17, 17, 17, 0.6);
   position: absolute;
   top: 0;
+}
+
+.OFD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: auto;
 }/*# sourceMappingURL=Home.module.css.map */

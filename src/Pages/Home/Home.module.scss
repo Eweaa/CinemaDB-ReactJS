@@ -13,3 +13,12 @@
         top: 0;
     }
 }
+
+.OFD{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    // overflow-x: scroll;
+    overflow: auto;
+}

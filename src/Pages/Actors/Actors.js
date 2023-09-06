@@ -16,18 +16,17 @@ const Actors = () => {
   const token = JSON.parse(localStorage.getItem('dataKey'));
 
   const getActors = () => {
-    axios.get('/api/Actor', {headers:{Authorization:`Bearer ${token}`}}).then(res => {
+    axios.get('/Actor', {headers:{Authorization:`Bearer ${token}`}}).then(res => {
       setActors(res.data);
     })
   }
 
 
   const PostData = (data) => {
-
-    // const data = NameRef?.current?.value;
-    console.log('this is the data: ', data)
+    console.log('it works and this is the data: ', data)
     const actor = {name: data}
-    axios.post('/api/Actor', actor, {headers:{Authorization:`Bearer ${token}`}})
+    axios.post('/Actor', actor, {headers:{Authorization:`Bearer ${token}`}})
+    getActors();
     setModal(false);
   }
 
@@ -35,7 +34,8 @@ const Actors = () => {
 
   function DeleteActor (ID){
     return function(){
-      axios.delete('/api/Actor/' + ID, {headers:{Authorization:`Bearer ${token}`}}).then(() => {
+      axios.delete('/Actor/' + ID, {headers:{Authorization:`Bearer ${token}`}}).then(() => {
+        getActors();
         setDeleteModal(true)
       })
     }
@@ -48,9 +48,8 @@ const Actors = () => {
     <div className='p-4'>
       <Backdrop modal={modal} setModal={setModal}/>
       <h1>Actors</h1>
-
       <div>
-        <TableContainer data={actors} col='one' modal={modal} setModal={setModal} create={PostData} delete={DeleteActor}/>
+        <TableContainer data={actors} added='Actor' col='one' modal={modal} setModal={setModal} create={PostData} delete={DeleteActor}/>
       </div>
 
     </div>

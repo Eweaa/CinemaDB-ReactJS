@@ -3,5 +3,6 @@
 }
 .Dashboard .stats {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }/*# sourceMappingURL=Dashboard.module.css.map */

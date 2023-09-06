@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = 'https://localhost:7250';
+const BASE_URL = 'https://localhost:7250/api';
 
 export default axios.create({
     baseURL: BASE_URL

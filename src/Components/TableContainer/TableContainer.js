@@ -4,8 +4,8 @@ import TableContainerCSS from './TableContainer.module.css'
 
 const TableContainer = (props) => {
 
-    const name = useRef();
-
+    const nameRef = useRef();
+    const nameRef2 = useRef();
 
     const TableCol = {
         one:<table>
@@ -16,7 +16,7 @@ const TableContainer = (props) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {props.data.map((d, index) => <Table key={d.id} id={d.id} title={d.name} col='one' delete={props.delete} />)}
+                    {props.data.map((d, index) => <Table key={index} id={d.id} title={d.name} col='one' delete={props.delete} />)}
                 </tbody>
             </table>,
         two:<table>
@@ -39,6 +39,11 @@ const TableContainer = (props) => {
     if(col === 'two')
     theTable = TableCol.two
 
+   const getdata = () => {
+    const data = nameRef.current.value;
+    // const theData = {name:data}
+    props.create(data)
+   }
 
   return (
     <div className={TableContainerCSS.TableContainer}>
@@ -50,14 +55,30 @@ const TableContainer = (props) => {
             {theTable}
         </div>
         <div style={{display: props.modal ? 'block' : 'none'}} className={[TableContainerCSS.Modal, 'p-4'].join(' ')}>
-            <h5>Add A Movie</h5>
+            <h5>Add A {props.added}</h5>
             <div>
                 <label>Name</label>
-                <input type='text'/>
+                <input type='text' ref={nameRef}/>
             </div>
-            <button className='mx-1 mt-2' >Add</button>
+            <button className='mx-1 mt-2' onClick={getdata}>Add</button>
             <button className='mx-1 mt-2' onClick={() => props.setModal(false)}>Cancel</button>
         </div>
+        
+        {/* <div style={{display: props.modal ? 'block' : 'none'}} className={[TableContainerCSS.Modal, 'p-4'].join(' ')}>
+            <h5>Add A {props.added}</h5>
+            <div>
+                <label>Name</label>
+                <input type='text' ref={nameRef}/>
+            </div>
+            <div>
+                <select>
+                    {props.data.map((d, index) => <option key={index} value={d.directorId} ref={nameRef2}>{d.directorName}</option>)}
+                </select>
+            </div>
+            <button className='mx-1 mt-2' onClick={getdata}>Add</button>
+            <button className='mx-1 mt-2' onClick={() => props.setModal(false)}>Cancel</button>
+        </div> */}
+
     </div>
   )
 }

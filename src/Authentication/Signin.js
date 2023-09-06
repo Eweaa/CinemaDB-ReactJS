@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useLocation } from "react-router-dom";
 // import useAuth from './useAuth';
 import useAuth from '../Hooks/useAuth';
-const LOGIN_URL = '/api/Security/GetUserQuery?';
+const LOGIN_URL = '/Security/GetUserQuery?';
 
 
 

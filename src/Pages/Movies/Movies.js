@@ -12,15 +12,24 @@ const Movies = () => {
     const [modal, setModal] = useState(false);
     
     const getMovies = () => {
-        axios.get('/api/Movie', {headers:{Authorization:`Bearer ${token}`}}).then(res => {setMovies(res.data)})
+        axios.get('/Movie', {headers:{Authorization:`Bearer ${token}`}}).then(res => {
+          console.log(res.data)
+          setMovies(res.data)})
     }
 
     function DeleteMovie (ID){
       return function(){
-        axios.delete('/api/Movie/' + ID, {headers:{Authorization:`Bearer ${token}`}}).then(() => {
+        axios.delete('/Movie/' + ID, {headers:{Authorization:`Bearer ${token}`}}).then(() => {
           // setDeleteModal(true)
         })
       }
+    }
+
+    const PostData = (data) => {
+      const movie = {name: data.name, directorId: data.directorId}
+      console.log(movie)
+      // axios.post('/Movie', movie, {headers:{Authorization:`Bearer ${token}`}})
+      setModal(false);
     }
 
     useEffect(() => getMovies(), [])
@@ -30,7 +39,7 @@ const Movies = () => {
       <Backdrop modal={modal} setModal={setModal}/>
         <h1>Movies</h1>
         <div>
-          <TableContainer data={movies} modal={modal} setModal={setModal} col='two' delete={DeleteMovie}/>
+          <TableContainer data={movies} modal={modal} setModal={setModal} create={PostData} col='two' delete={DeleteMovie}/>
         </div>
     </div>
   )

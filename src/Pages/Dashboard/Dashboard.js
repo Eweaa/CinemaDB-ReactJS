@@ -13,15 +13,15 @@ const Dashboard = () => {
 
     const getData = () => {
 
-        axios.get('/api/Actor', {headers:{Authorization:`Bearer ${token}`}}).then((res) => {
+        axios.get('/Actor', {headers:{Authorization:`Bearer ${token}`}}).then((res) => {
             setActor(res.data)
         })
 
-        axios.get('/api/Movie', {headers:{Authorization:`Bearer ${token}`}}).then((res) => {
+        axios.get('/Movie', {headers:{Authorization:`Bearer ${token}`}}).then((res) => {
             setMovie(res.data)
         })
 
-        axios.get('/api/Director', {headers:{Authorization:`Bearer ${token}`}}).then((res) => {
+        axios.get('/Director', {headers:{Authorization:`Bearer ${token}`}}).then((res) => {
             setDirector(res.data)
         })
 
